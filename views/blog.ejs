@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/output.css" />
+        <script src="/jquery-3.7.1.min.js"></script>
+        <script src="/script.js"></script>
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+        <!-- tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Blogs - wellbeing</title>
+      </head>
+<body>
+
+    <header
+    class="header h-16 sticky top-0 flex bg-white sm:justify-around max-sm:justify-between items-center shadow-md p-1 font-inter"
+  >
+    <span class="mt-1 max-sm:ml-8">
+      <img src="/assets/logo_transparent.png" alt="logo" width="150px" />
+    </span>
+
+    <ul class="hidden cursor-pointer sm:inline-flex font-semibold">
+      <li class="ml-5 mr-5 border-b-2 transition ease-in-out border-indigo-500 hover:text-indigo-500">
+        <a href="/">Home</a>
+      </li>
+      <li class="ml-5 mr-4 transition ease-in-out hover:text-indigo-500">
+        <a href="/users/dashboard#servicesSection">Services</a>
+      </li>
+      <li class="ml-5 transition ease-in-out hover:text-indigo-500">
+        <a href="/users/dashboard#contactSection">Contact</a>
+      </li>
+    </ul>
+
+    <!-- PC menu -->
+    <span class="max-sm:hidden">
+      <ul class="flex font-semibold font-inter">
+        <li class="mr-2 px-2 py-1">
+            <a href="/users/writeblog" class="hover:border-b-4 hover:border-gray-500 transition ease-in-out">
+                <i class="fa-solid fa-pencil"></i> Post
+           </a>
+        </li>
+        <li
+          class="border-2 text-white border-indigo-500 bg-indigo-500 rounded px-4 py-1 hover:bg-white hover:text-indigo-500 transition ease-in-out hover:border-indigo-500"
+        >
+          <a href="/users/logout"> Log out </a>
+        </li>
+      </ul>
+    </span>
+
+    <!-- mobile hamburger menu -->
+    <span class="sm:hidden" id="navbarToggle">
+      <i class="fa fa-bars px-10 Bars"></i>
+      <i class="fa fa-xmark px-10 Bars"></i>
+    </span>
+  </header>
+
+
+  <div class="flex flex-col p-10 items-center font-archivo  h-[90vh]">
+    <div class="p-5 w-[80%]">
+        <ul>
+          <% blogPosts.forEach(post => { %>
+            <li>
+                <div class="p-5 mt-3 border-2 rounded flex justify-start items-start">
+                  <div class="mt-3 border-2 rounded mr-8 w-[35%]">
+                    <img src="<%= post.imgurl %>" alt="image" class="blog-image rounded">
+                  </div>
+                  <div class="mt-3 w-[65%]">
+                    <h1 class="font-inter font-bold text-indigo-600 text-4xl "><%= post.title %></h1>
+                    <h5 class="font-archivo mt-3 text-gray-600">By <%= post.author %></h5>
+                    <hr class="h-1 mt-3 mx-auto bg-gray-400 border-0 ">
+                    <p class="mt-3 text-gray-700 font-archivo text-lg text-justify">
+                      <%= post.content.substring(0, 100) %>...
+                    </p>
+                    <div class="mt-4">
+                        <a href="/users/blog/view-post/<%= post._id %>" class="font-archivo text-indigo-500 text-lg"> Read More <i class="fa-solid fa-arrow-right"></i> </a>
+                  </div>
+                    
+                    </div>
+                </div>
+            </li>
+            <% }); %>
+        </ul>
+        
+    </div>
+
+
+    <!-- footer -->
+    <div class="mt-10 pb-10">
+        <a href="/users/writeblog"> <i class="fa-solid fa-pencil"> </i> Post a Blog</a>
+        <span class="ml-3 mr-3"> </span>
+        <a href="/"> <i class="fa-solid fa-house"></i>  Home Page </a>
+    </div>
+
+
+  </div>
+
+
+</body>
+</html>
