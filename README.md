@@ -22,7 +22,7 @@ This project is a website aimed at promoting mental health and wellbeing. It off
 The website is deployed and accessible at [GitHub Repository](https:https://github.com/Nitesh8502/mental-health-services.git).
 
 ## Credits
-- **Nitesh Dotasara**: Creator of the website. You can find more about Ankush on [GitHub](https://github.com/Nitesh8502/mental-health-services.git).
+- **Nitesh Dotasara**: Creator of the website. You can find more about nitesh on [GitHub](https://github.com/Nitesh8502/mental-health-services.git).
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
